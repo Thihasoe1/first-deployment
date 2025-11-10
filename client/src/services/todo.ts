@@ -45,5 +45,5 @@ export const deleteNote = async (id: string) => {
   // await fetch(`${API_URL}/deleteTodo/${id}`, {
   //   method: "DELETE",
   // });
-  await axios.delete(id);
+  await axios.delete(`${API_URL}/deleteTodo/${id}`);
 };
