@@ -11,8 +11,8 @@
     "target": "esnext",
     "types": [],
     "esModuleInterop": true,
-    "allowImportingTsExtensions": false,
-    "noEmit": false,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
