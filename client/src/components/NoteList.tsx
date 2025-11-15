@@ -61,25 +61,37 @@ function NoteList() {
 
   return (
     <div>
-      <h2>Note Lists</h2>
       <ul>
         {note.map((item) => (
-          <li key={item._id}>
-            {item.title}{" "}
-            <button onClick={() => handelModeChange(item.title, item._id)}>
-              Edit
-            </button>
-            <button onClick={() => handleDeleteNote(item._id)}>Delete</button>
+          <li key={item._id} className="flex items-center gap-2 mb-4">
+            <p className="font-semibold">{item.title}</p>
+            <div className="flex space-x-2">
+              <button
+                onClick={() => handelModeChange(item.title, item._id)}
+                className="text-amber-500 underline"
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDeleteNote(item._id)}
+                className="text-red-500 underline"
+              >
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>
-      <form action="" onSubmit={submitHandler}>
+      <form action="" onSubmit={submitHandler} className="space-x-2">
         <input
           type="text"
           value={msg}
+          className="border p-2 text-sm"
           onChange={(e) => setMsg(e.target.value)}
         />
-        <button>{editMode ? "Update" : "Create"}</button>
+        <button className="bg-black text-white px-4 py-2 border border-black text-sm">
+          {editMode ? "Update" : "Create"}
+        </button>
       </form>
     </div>
   );
